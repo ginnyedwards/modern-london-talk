@@ -8,24 +8,27 @@
         body { font-family: -apple-system, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f9f9f9; color: #333; }
         .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         
-        /* Progress Bar - Updated to 18% for Stop 3 */
+        /* Progress Bar - 18% for Stop 3 */
         .progress-bg { background: #eee; height: 8px; border-radius: 4px; margin-bottom: 20px; }
-        .progress-fill { background: #28a745; height: 100%; width: 18%; border-radius: 4px; transition: width 0.5s; }
+        .progress-fill { background: #28a745; height: 100%; width: 18%; border-radius: 4px; }
 
         .header { text-transform: uppercase; letter-spacing: 1px; color: #888; font-size: 0.75em; font-weight: bold; }
         h1 { margin: 5px 0 15px 0; font-size: 1.8em; }
 
         /* Slideshow CSS */
-        .slideshow-container { position: relative; margin: auto; }
+        .slideshow-container { position: relative; margin: auto; min-height: 200px; }
         .mySlides { display: none; }
         img { width: 100%; border-radius: 10px; vertical-align: middle; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 20px; background: rgba(0,0,0,0.4); border-radius: 5px; text-decoration: none; user-select: none; }
+        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 20px; background: rgba(0,0,0,0.4); border-radius: 5px; text-decoration: none; user-select: none; z-index: 10; }
         .next { right: 0; }
         
         .content { font-size: 1.1em; margin: 25px 0; color: #444; }
         
+        /* Buttons */
         .btn { display: block; text-align: center; background: #000; color: #fff; padding: 16px; text-decoration: none; border-radius: 10px; font-weight: bold; margin-bottom: 10px; }
-        .btn-map { background: #4285F4; font-size: 0.9em; }
+        .btn-secondary { background: #6c757d; font-size: 0.9em; flex: 1; }
+        .btn-map { background: #4285F4; font-size: 0.9em; flex: 1; }
+        .button-row { display: flex; gap: 10px; }
         .back-home { display: block; text-align: center; color: #999; text-decoration: none; font-size: 0.9em; margin-top: 15px; }
     </style>
 </head>
@@ -37,11 +40,10 @@
     </div>
 
     <p class="header">Stop 3 of 16</p>
-    <h1>The Hidden Courtyard</h1> <!-- Change this to your Stop 3 Name -->
+    <h1>Brixton Recreation Centre</h1>
 
     <!-- SLIDESHOW START -->
     <div class="slideshow-container">
-        <!-- Make sure these images exist in your /images folder -->
         <div class="mySlides"><img src="images/stop3-1.jpg"></div>
         <div class="mySlides"><img src="images/stop3-2.jpg"></div>
         <div class="mySlides"><img src="images/stop3-3.jpg"></div>
@@ -52,18 +54,20 @@
     <!-- SLIDESHOW END -->
 
     <div class="content">
-        <p>
-            This is where the story for Stop 3 goes. Describe the architecture, 
-            the history, or a fun fact that happened right where the user is standing.
-        </p>
+        <p>Your story for Stop 3 goes here...</p>
     </div>
 
+    <!-- Navigation Chain -->
     <a href="stop4.html" class="btn">Next: Stop 4 →</a>
-    
-    <!-- Google Maps Link (Optional: Update the coordinates) -->
-    <a href="https://www.google.com/maps/search/?api=1&query=YOUR_LAT,YOUR_LONG" class="btn btn-map">📍 Navigate to Next Stop</a>
 
-    <a href="index.html" class="back-home">← Back to Menu</a>
+    <div class="button-row">
+        <!-- Previous button back to Stop 2 -->
+        <a href="stop2.html" class="btn btn-secondary">← Previous</a>
+        <!-- Map button -->
+        <a href="https://www.google.com/maps/search/?api=1&query=51°27'48.9"N,0°06'47.9"W" class="btn btn-map" target="_blank" rel="noopener noreferrer"> Open in Google Maps</a>
+    </div>
+
+    <a href="index.html" class="back-home">← Return to Menu</a>
 </div>
 
 <script>
