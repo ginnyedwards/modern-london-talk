@@ -1,57 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stop 1 | Walking Tour</title>
     <style>
-        /* This section makes it look like a mobile app */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #fdfdfd; color: #333; }
-        .container { max-width: 500px; margin: auto; }
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f9f9f9; }
+        .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 12px; }
         
-        /* The Progress Bar */
-        .progress-bg { background: #eee; height: 8px; border-radius: 4px; margin-bottom: 20px; overflow: hidden; }
-        .progress-fill { background: #28a745; height: 100%; width: 6%; /* Increase this by ~6% every stop */ }
-
-        .header { text-transform: uppercase; letter-spacing: 1px; color: #888; font-size: 0.75em; font-weight: bold; margin-bottom: 5px; }
-        h1 { margin: 0 0 15px 0; font-size: 1.8em; color: #111; }
+        /* Slideshow CSS */
+        .slideshow-container { position: relative; margin: auto; }
+        .mySlides { display: none; }
+        img { width: 100%; border-radius: 8px; vertical-align: middle; }
+        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 18px; background: rgba(0,0,0,0.3); border-radius: 0 3px 3px 0; user-select: none; text-decoration: none; }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
         
-        img { width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        
-        .content { font-size: 1.15em; color: #444; margin-bottom: 30px; }
-        
-        /* Buttons */
-        .btn { display: block; text-align: center; background: #000; color: #fff; padding: 18px; text-decoration: none; border-radius: 10px; font-weight: bold; margin-bottom: 12px; }
-        .btn-map { background: #4285F4; } /* Google Blue */
-        .back-home { display: block; text-align: center; color: #888; text-decoration: none; font-size: 0.9em; margin-top: 20px; }
+        .btn { display: block; text-align: center; background: #000; color: #fff; padding: 15px; text-decoration: none; border-radius: 8px; margin-top: 15px; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Progress Bar (Change 'width' for every stop: 6%, 12%, 18%...) -->
-    <div class="progress-bg">
-        <div class="progress-fill" style="width: 6%;"></div>
+    <p style="color: grey;">Stop 1 of 16</p>
+    <h1>The Old Town Gate</h1>
+
+    <!-- SLIDESHOW START -->
+    <div class="slideshow-container">
+        <div class="mySlides"><img src="images/stop1-1.jpg"></div>
+        <div class="mySlides"><img src="images/stop1-2.jpg"></div>
+        <div class="mySlides"><img src="images/stop1-3.jpg"></div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-
-    <p class="header">Stop 1 of 16</p>
-    <h1>The Historic Fountain</h1>
-
-    <!-- Image: Replace 'stop1.jpg' with your actual filename -->
-    <img src="images/stop1.jpg" alt="Photo of stop 1">
+    <!-- SLIDESHOW END -->
 
     <div class="content">
-        <p>Paste your story here. For a 16-stop tour, 2-3 short paragraphs per stop is the "sweet spot" for keeping people engaged without overwhelming them.</p>
+        <p>This is where your story for Stop 1 goes.</p>
     </div>
 
-    <!-- Navigation Buttons -->
     <a href="stop2.html" class="btn">Next Stop →</a>
-    
-    <!-- Replace the 00.000 coordinates with the actual location of the stop -->
-    <a href="https://www.google.com/maps/search/?api=1&query=00.000,00.000" class="btn btn-map"> Open in Google Maps</a>
-    
-    <a href="index.html" class="back-home">← Back to Menu</a>
+    <a href="index.html" style="display:block; text-align:center; margin-top:10px; color:grey; text-decoration:none;">← Back to Menu</a>
 </div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) { showSlides(slideIndex += n); }
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+        slides[slideIndex-1].style.display = "block";
+    }
+</script>
 
 </body>
 </html>
