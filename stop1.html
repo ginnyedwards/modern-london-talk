@@ -47,15 +47,17 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     
-    <!-- AUDIO PLAYER START -->
-<div style="background: #f1f1f1; padding: 15px; border-radius: 12px; margin: 20px 0; text-align: center;">
-    <p style="margin: 0 0 10px 0; font-weight: bold; font-size: 0.9em; color: #555;"> Audio</p>
-    <audio controls style="width: 100%;">
+ <!-- AUDIO PLAYER MASTER START -->
+<div style="display: block; background: #ececec; border: 1px solid #ccc; padding: 20px; border-radius: 15px; margin: 25px 0; clear: both;">
+    <p style="margin: 0 0 12px 0; font-weight: bold; text-align: center; color: #333;">🔊 Tap to Listen</p>
+    
+    <audio controls style="width: 100%; height: 50px; display: block;">
         <source src="audio/stop3.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+        <source src="audio/stop3.ogg" type="audio/ogg">
+        Your browser does not support the audio player.
     </audio>
 </div>
-<!-- AUDIO PLAYER END -->
+<!-- AUDIO PLAYER MASTER END -->
 
     <div class="content">
         <p>Your story for Stop 1 goes here...</p>
