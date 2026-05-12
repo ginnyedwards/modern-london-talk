@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop 1 | Walking Tour</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f9f9f9; }
-        .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 12px; }
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f9f9f9; color: #333; }
+        .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         
-        /* Slideshow CSS */
-        .slideshow-container { position: relative; margin: auto; }
+        .progress-bg { background: #eee; height: 8px; border-radius: 4px; margin-bottom: 20px; }
+        .progress-fill { background: #28a745; height: 100%; width: 6%; border-radius: 4px; }
+
+        .header { text-transform: uppercase; letter-spacing: 1px; color: #888; font-size: 0.75em; font-weight: bold; }
+        h1 { margin: 5px 0 15px 0; font-size: 1.8em; }
+
+        .slideshow-container { position: relative; margin: auto; min-height: 200px; }
         .mySlides { display: none; }
-        img { width: 100%; border-radius: 8px; vertical-align: middle; }
-        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 18px; background: rgba(0,0,0,0.3); border-radius: 0 3px 3px 0; user-select: none; text-decoration: none; }
-        .next { right: 0; border-radius: 3px 0 0 3px; }
+        img { width: 100%; border-radius: 10px; vertical-align: middle; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px; margin-top: -22px; color: white; font-weight: bold; font-size: 20px; background: rgba(0,0,0,0.4); border-radius: 5px; text-decoration: none; user-select: none; z-index: 10; }
+        .next { right: 0; }
         
-        .btn { display: block; text-align: center; background: #000; color: #fff; padding: 15px; text-decoration: none; border-radius: 8px; margin-top: 15px; font-weight: bold; }
+        .content { font-size: 1.1em; margin: 25px 0; color: #444; }
+        
+        /* Full-width buttons */
+        .btn { display: block; text-align: center; background: #000; color: #fff; padding: 16px; text-decoration: none; border-radius: 10px; font-weight: bold; margin-bottom: 12px; }
+        .btn-map { background: #4285F4; }
+        .back-home { display: block; text-align: center; color: #999; text-decoration: none; font-size: 0.9em; margin-top: 15px; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <p style="color: grey;">Stop 1 of 16</p>
-    <h1>10 Dorchester Drive</h1></div>
+    <div class="progress-bg">
+        <div class="progress-fill"></div>
+    </div>
 
-    <!-- SLIDESHOW START -->
+    <p class="header">Stop 1 of 16</p>
+    <h1>10 Dorchester Drive</h1>
+
     <div class="slideshow-container">
         <div class="mySlides"><img src="images/stop1-1.jpg"></div>
         <div class="mySlides"><img src="images/stop1-2.jpg"></div>
@@ -31,14 +46,17 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    <!-- SLIDESHOW END -->
 
     <div class="content">
-        <p>This is where your story for Stop 1 goes.</p>
+        <p>Your story for Stop 1 goes here...</p>
     </div>
 
-    <a href="stop2.html" class="btn">Next Stop →</a>
-    <a href="index.html" style="display:block; text-align:center; margin-top:10px; color:grey; text-decoration:none;">← Back to Menu</a>
+    <!-- Simplified Navigation -->
+    <a href="stop2.html" class="btn">Next: Stop 2 →</a>
+    
+    <a href="https://www.google.com/maps/search/?api=1&query=51°27′31″N,0°05′52″W﻿" class="btn btn-map" target="_blank" rel="noopener noreferrer"> Open in Google Maps</a>
+
+    <a href="index.html" class="back-home">← Return to Menu</a>
 </div>
 
 <script>
@@ -53,8 +71,6 @@
         for (i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
         slides[slideIndex-1].style.display = "block";
     }
-    <!-- Replace the 00.000 coordinates with the actual location of the stop -->
-    <a href="https://www.google.com/maps/search/?api=1&query=51.4623°,0.1086°" class="btn btn-map"> Open in Google Maps</a>
 </script>
 
 </body>
