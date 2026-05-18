@@ -50,6 +50,40 @@
     .brand-intro { flex-direction: column; text-align: center; }
     .large-logo { margin: 0 auto; }
 }
+        /* Grid layout for jumping to specific stops */
+.stop-jump-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #444;
+    margin: 30px 0 15px 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 even columns */
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.grid-item {
+    display: block;
+    text-align: center;
+    background: #f1f3f4;
+    color: #333;
+    padding: 12px 0;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.9em;
+    border: 1px solid #ddd;
+    transition: background 0.2s, color 0.2s;
+}
+/* Subtle hover/active effect when tapped */
+.grid-item:active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
     </style>
 </head>
 <body>
@@ -73,6 +107,27 @@
     <!-- START ACTION BUTTON -->
     <a href="stop1.html" class="btn" style="background: #28a745; font-size: 1.2em;">Start Tour Here</a>
 
+    <!-- JUMP TO A STOP SECTION -->
+<div class="stop-jump-title">Jump to a Specific Stop:</div>
+<div class="grid-container">
+    <a href="stop1.html" class="grid-item">1: 10 Dorchester Drive</a>
+    <a href="stop2.html" class="grid-item">2: Southwyck House</a>
+    <a href="stop3.html" class="grid-item">3: Brixton Rec Centre</a>
+    <a href="stop4.html" class="grid-item">4: Wyndham Estate</a>
+    <a href="stop5.html" class="grid-item">5: Brandon Estate</a>
+    <a href="stop6.html" class="grid-item">6: 134 Kennington Park Road</a>
+    <a href="stop7.html" class="grid-item">7: Cotton Gardens Estate</a>
+    <a href="stop8.html" class="grid-item">8: Draper Estate</a>
+    <a href="stop9.html" class="grid-item">9: Metro Central Heights</a>
+    <a href="stop10.html" class="grid-item">10: Perronet House</a>
+    <a href="stop11.html" class="grid-item">11: Lambeth Towers</a>
+    <a href="stop12.html" class="grid-item">12: B,C,S House</a>
+    <a href="stop13.html" class="grid-item">13: Southbank Centre</a>
+    <a href="stop14.html" class="grid-item">14: National Theatre</a>
+    <a href="stop15.html" class="grid-item">15: Colechurch House</a>
+    <a href="stop16.html" class="grid-item">16: Alaska Factory</a>
+</div>
+    
     <!-- PDF OFFLINE BACKUP SECTION -->
     <div style="text-align: center; margin: 30px 0 0 0; padding: 20px; border: 2px dashed #ccc; border-radius: 15px;">
         <p style="margin-top: 0; font-weight: bold; color: #555;">No signal? No problem.</p>
